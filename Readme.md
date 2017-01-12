@@ -1,1 +1,1 @@
-Live Page: https://debelopumento.github.io/thinkful/ticTacToe/index.html
+Live Page: https://debelopumento.github.io/ticTacToe/index.html
