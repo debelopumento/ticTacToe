@@ -1,8 +1,9 @@
-var boardSize = 5;
+var boardSize = 3;
 var XsTurn = true;
 var board = {
 	row: []
 }
+
 
 $(function(){
 	initGame();
@@ -94,6 +95,13 @@ function playGame() {
 	$('.js-newgame').click(function(){
 		restart();
 	});
+
+	$("#boardSize").change(function () {
+           boardSize = Number($(this).find("option:selected").text());
+           console.log("boardSize changed to: ", boardSize);
+           restart();
+        });
+
 }
 
 function alertFinish(){
