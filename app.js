@@ -1,4 +1,4 @@
-var boardSize = 3;
+var boardSize = 5;
 var XsTurn = true;
 var board = {
 	row: []
@@ -33,6 +33,7 @@ function renderBoard(){
 	var boardHtml = '';
 	for (i=1; i <= boardSize; i++) {
 		boardHtml += '<div class="boardRow" data-row="' + i + '">';
+		
 		for (j=1; j <= boardSize; j++) {
 			boardHtml += '<span class="unit empty js-unit" data-column="' + j + '">' + '</span>';
 		}
@@ -75,9 +76,18 @@ function playGame() {
 			}
 			if (gameOver===true) {alertFinish();}
 			//check diagonal
-			if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn]) {alertFinish();}
-			if (board.row[1][3]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][1]===board.row[currentRow][currentColumn]) {alertFinish();}
-			//
+			if(boardSize===3) {
+				if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn]) {alertFinish();}
+				if (board.row[1][3]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][1]===board.row[currentRow][currentColumn]) {alertFinish();}
+			}
+			if (boardSize===4) {
+				if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][4]===board.row[currentRow][currentColumn]) {alertFinish();}
+				if (board.row[1][4]===board.row[currentRow][currentColumn] && board.row[2][3]===board.row[currentRow][currentColumn] && board.row[3][2]===board.row[currentRow][currentColumn] && board.row[4][1]===board.row[currentRow][currentColumn]) {alertFinish();}
+			}
+			if (boardSize===5) {
+				if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][4]===board.row[currentRow][currentColumn] && board.row[5][5]===board.row[currentRow][currentColumn]) {alertFinish();}
+				if (board.row[1][5]===board.row[currentRow][currentColumn] && board.row[2][4]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][2]===board.row[currentRow][currentColumn] && board.row[5][1]===board.row[currentRow][currentColumn]) {alertFinish();}
+			}
 		XsTurn = !XsTurn;
 	});	
 
