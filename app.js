@@ -37,7 +37,6 @@ function renderBoard(){
 	}
 	$('.js-board').html(boardHtml);
 	playGame();
-
 }
 
 
@@ -103,6 +102,9 @@ function playGame() {
 }
 
 function alertFinish(){
-	alert("Game Over");
+	if (XsTurn===true) {
+		alert("Game over, X won!");
+	}
+	else alear ("Game over, O won!");
 }	
 	
