@@ -1,23 +1,45 @@
+body {
+	height: 100%;
+	background-color: grey;
+}
+
+nav {
+	text-align: center;
+	background-color: lightgrey;
+	margin: 10px;
+	padding: 10px;
+	height: 100px
+}
 
 main {
-	padding: 40px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	display: flex;
 }	
-	
+
+.boardDiv {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	float: center;
+	text-align: center;
+}
 
 
 .boardRow {
-	height: 40px;
-	margin-bottom: 20px;
-	display: block;
+	display: flex;
 }	
 
 .unit {
-	padding: 20px;
-	margin-left: 5px;
-	margin-right: 5px;
-	border: 2px black solid;
+	background-color: red;
+	border: 3px solid black;
+	width: 100px;
+	height: 100px;
 	background-size: 100% 100%;
-}	
+}
+
 
 .X {
 	background-image: url(images/X.png);

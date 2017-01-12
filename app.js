@@ -51,7 +51,6 @@ function playGame() {
 		//var currentRow = coordinate[0];
 		var currentRow = $(this).closest('div').attr('data-row');
 		var currentColumn = $(this).closest('span').attr('data-column');
-		//var currentColumn = coordinate[3];
 		if (XsTurn===true) {
 			$(event.currentTarget).toggleClass('X');
 			board.row[currentRow][currentColumn] = "X";
