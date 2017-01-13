@@ -3,9 +3,13 @@ var XsTurn = true;
 var board = {
 	row: []
 }
+var deviceWidth = 0;
+var deviceHeight = 0;
 
 
 $(function(){
+	deviceWidth = window.screen.width;
+	deviceHeight = window.screen.height;
 	initGame();
 });
 
@@ -30,17 +34,23 @@ function initGame() {
 }
 
 function renderBoard(){
-	var boardRowWidth = boardSize*55;
+	if (deviceWidth < deviceHeight) {
+		var unitSize = (deviceWidth-30)/boardSize;
+	}
+		else {
+			var unitSize = (deviceHeight-30)/boardSize;
+			console.log("who am i ", unitSize);
+		}
+	var boardRowWidth = boardSize*unitSize;
 	var boardHtml = '';
 	for (i=1; i <= boardSize; i++) {
 		//boardHtml = '';
-		boardHtml += '<div class="boardRow" id="p2" style="width: ' + boardRowWidth + 'px" data-row="' + i + '">';
+		boardHtml += '<div class="boardRow" style="width: ' + boardRowWidth + 'px" data-row="' + i + '">';
 		for (j=1; j <= boardSize; j++) {
-			boardHtml += '<span class="unit empty js-unit" data-column="' + j + '">' + '</span>';
+			boardHtml += '<span class="unit empty js-unit" style="width: ' + unitSize + 'px; height: ' + unitSize + 'px"  data-column="' + j + '">' + '</span>';
 		}
 		boardHtml += '</div>';
-		//$('.js-board').append(boardHtml);
-		//document.getElementById("p2").style.width = (boardSize*150).toString() + 'px';
+
 	}
 	$('.js-board').html(boardHtml);
 
