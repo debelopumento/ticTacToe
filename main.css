@@ -2,17 +2,22 @@
 	display: none;
 }
 
-body {
+html, body {
 	height: 100%;
+	width: 100%;
 	background-color: grey;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
 }
+
 
 nav {
 	text-align: center;
 	background-color: lightgrey;
 	margin: 10px;
-	padding: 10px;
-	height: 100px
+	padding-top: 3px;
+	padding-bottom: 10px;
 }
 
 main {
@@ -32,16 +37,19 @@ main {
 
 .boardRow {
 	display: flex;
-	min-width: 400px;
-
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
 }	
 
-.unit {
+.board {
+}
 
+.unit {
 	background-color: white;
 	border: 3px solid black;
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	background-size: 100% 100%;
 }
 
