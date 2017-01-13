@@ -14,6 +14,7 @@ function restart() {
 	$(".ui-dialog").remove();
 	$('.js-boardDiv').html();
 	$('#dialog').toggleClass("hidden");
+	XsTurn = true;
 	initGame();
 }
 
@@ -29,7 +30,7 @@ function initGame() {
 }
 
 function renderBoard(){
-	var boardRowWidth = boardSize*100;
+	var boardRowWidth = boardSize*55;
 	var boardHtml = '';
 	for (i=1; i <= boardSize; i++) {
 		//boardHtml = '';
