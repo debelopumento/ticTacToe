@@ -12,6 +12,7 @@ $(function(){
 function restart() {
 	event.preventDefault();
 	$('.js-boardDiv').html();
+	$('#dialog').toggleClass("hidden");
 	initGame();
 }
 
@@ -103,9 +104,17 @@ function playGame() {
 
 function alertFinish(){
 	if (XsTurn===true) {
-		//alert("Game over, X won!");
-		$( "#dialog" ).dialog();
+		var winner = "X";
 	}
-	else alear ("Game over, O won!");
+	else {var winner = "O"}
+	var endalert = '';
+	endalert += '<div id="dialog" title="Game Over">';
+	endalert += '<p>' + winner + ' won!</p>';
+	endalert += '<button class="js-newgame">New Game</button></div>'
+	$(".message").html(endalert);
+	$( "#dialog" ).dialog();
+	$('.js-newgame').click(function(){
+		restart();
+	});
 }	
 	
