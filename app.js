@@ -103,7 +103,8 @@ function playGame() {
 
 function alertFinish(){
 	if (XsTurn===true) {
-		alert("Game over, X won!");
+		//alert("Game over, X won!");
+		$( "#dialog" ).dialog();
 	}
 	else alear ("Game over, O won!");
 }	
