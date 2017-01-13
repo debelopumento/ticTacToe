@@ -11,6 +11,7 @@ $(function(){
 
 function restart() {
 	event.preventDefault();
+	$(".ui-dialog").remove();
 	$('.js-boardDiv').html();
 	$('#dialog').toggleClass("hidden");
 	initGame();
