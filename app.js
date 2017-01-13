@@ -29,15 +29,25 @@ function initGame() {
 }
 
 function renderBoard(){
+	var boardRowWidth = boardSize*100;
 	var boardHtml = '';
 	for (i=1; i <= boardSize; i++) {
-		boardHtml += '<div class="boardRow" data-row="' + i + '">';
+		//boardHtml = '';
+		boardHtml += '<div class="boardRow" id="p2" style="width: ' + boardRowWidth + 'px" data-row="' + i + '">';
 		for (j=1; j <= boardSize; j++) {
 			boardHtml += '<span class="unit empty js-unit" data-column="' + j + '">' + '</span>';
 		}
 		boardHtml += '</div>';
+		//$('.js-board').append(boardHtml);
+		//document.getElementById("p2").style.width = (boardSize*150).toString() + 'px';
 	}
 	$('.js-board').html(boardHtml);
+
+	//updated css
+	
+
+	//
+
 	playGame();
 }
 
@@ -110,9 +120,9 @@ function playGame() {
 
 	$("#boardSize").change(function () {
            boardSize = Number($(this).find("option:selected").text());
-           console.log("boardSize changed to: ", boardSize);
+           //document.getElementById("p2").style.background = "blue";
            restart();
-        });
+    });
 
 }
 

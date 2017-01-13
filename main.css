@@ -14,7 +14,7 @@ html, body {
 
 nav {
 	text-align: center;
-	background-color: lightgrey;
+	background: lightgrey;
 	margin: 10px;
 	padding-top: 3px;
 	padding-bottom: 10px;
@@ -28,28 +28,27 @@ main {
 }	
 
 .boardDiv {
-	width: 90%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.board {
+	display: block;
+}
 
 .boardRow {
 	display: flex;
-	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 }	
 
-.board {
-}
 
 .unit {
 	background-color: white;
 	border: 3px solid black;
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	background-size: 100% 100%;
 }
 
