@@ -143,7 +143,6 @@ function playGame(boardSize, board) {
 
 	$("#boardSize").change(function () {
            boardSize = Number($(this).find("option:selected").text());
-           //document.getElementById("p2").style.background = "blue";
            restart(boardSize);
     });
 
