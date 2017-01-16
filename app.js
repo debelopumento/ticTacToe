@@ -56,6 +56,9 @@ function playGame(boardSize, board) {
 	var turn=1;
 	var XsTurn = true;
 	var gameFinished = false;
+	var rowN = 1;
+	var columnN = 1;
+
 	$('.js-unit').click(function(event){
 		console.log(this);
 		var currentRow = $(this).closest('div').attr('data-row');
@@ -88,7 +91,7 @@ function playGame(boardSize, board) {
 					alertFinish(XsTurn, boardSize);
 				}
 				//check column
-				var gameOver = true;
+				gameOver = true;
 				for (i=1; i <=boardSize; i++) {
 					if (board.row[currentRow][currentColumn] != board.row[i][currentColumn]) {gameOver = false;}
 
@@ -97,25 +100,36 @@ function playGame(boardSize, board) {
 					gameFinished = true;
 					alertFinish(XsTurn, boardSize);
 				}
-				//check diagonal
-				if(boardSize===3) {
-					if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
-					if (board.row[1][3]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][1]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
+				//check diagnoal top left to bottom right
+				gameOver = true;
+				for (k = 1; k <= boardSize; k++) {
+					if (board.row[k][k]!=board.row[currentRow][currentColumn]) {gameOver = false;}
 				}
+				if (gameOver===true) {
+					gameFinished = true;
+					alertFinish(XsTurn, boardSize);
+				} 
+				//check diagonal top right to bottom left
+				gameOver = true;
+				rowN = 1;
+				columnN = boardSize;
+				for (k = 1; k <= boardSize; k++) {
+					if (board.row[rowN][columnN]!=board.row[currentRow][currentColumn]) {gameOver = false;}
+					rowN = rowN +1;
+					columnN = columnN -1;
+				}
+				if (gameOver===true) {
+					gameFinished = true;
+					alertFinish(XsTurn, boardSize);
+				} 
 
-				if (boardSize===4) {
-					if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][4]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
-					if (board.row[1][4]===board.row[currentRow][currentColumn] && board.row[2][3]===board.row[currentRow][currentColumn] && board.row[3][2]===board.row[currentRow][currentColumn] && board.row[4][1]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
-				}
-				if (boardSize===5) {
-					if (board.row[1][1]===board.row[currentRow][currentColumn] && board.row[2][2]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][4]===board.row[currentRow][currentColumn] && board.row[5][5]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
-					if (board.row[1][5]===board.row[currentRow][currentColumn] && board.row[2][4]===board.row[currentRow][currentColumn] && board.row[3][3]===board.row[currentRow][currentColumn] && board.row[4][2]===board.row[currentRow][currentColumn] && board.row[5][1]===board.row[currentRow][currentColumn]) {alertFinish(XsTurn, boardSize); gameFinished = true;}
-				}
-
+				//check if draw
 				if (turn === boardSize * boardSize) {
 					gameFinished = true;
 					alertDraw(boardSize);
 				}
+
+				//go to next turn
 				XsTurn = !XsTurn;
 				turn = turn + 1;
 			}
