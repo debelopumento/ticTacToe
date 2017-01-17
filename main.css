@@ -2,22 +2,31 @@
 	display: none;
 }
 
+
+
 html, body {
 	height: 100%;
 	width: 100%;
-	background-color: grey;
+	background-color: #E7C47A;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
+	color: #F2F0F2;
 }
 
 
 nav {
 	text-align: center;
-	background: lightgrey;
+	background: #594842;
 	margin: 4px;
 	padding-top: 3px;
 	padding-bottom: 6px;
+}
+
+button {
+	color: E7C47A;
+	background-color: #F2F0F2;
+	border: 0;
 }
 
 main {
@@ -46,11 +55,9 @@ main {
 
 
 .unit {
-	background-color: white;
+	background-color: #D46660;
 	background-size: 100% 100%;
 	border: 1px solid lightgrey;
-	/*background-image: url(images/border.png);
-	/*border-image: url(images/border.png) 50 50 50 50 stretch stretch;*/
 
 }
 
@@ -62,24 +69,3 @@ main {
 .O {
 	background-image: url(images/O.png);
 }	
-
-
-/*@media (min-width: 568px) and (max-width: 736px) {
-	nav {
-		/*transform: rotate(90deg) translateX(80px);
-		/*writing-mode: vertical-rl;*/
-/*		width: 200px;
-		/*????? When the width changes, the padding/space between the board and the nav bar changes? 
-
-		height: 100px;
-		margin-top: 0;
-		margin-right: 10px;
-		padding: 5px;
-		float: right;
-	}
-
-	.boardControl {
-		display: block;
-
-	}
-} */

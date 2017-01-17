@@ -166,7 +166,6 @@ function alertFinish(XsTurn, boardSize) {
 	$('.js-newgame').click(function(){
 		restart(boardSize);
 	});
-	//restart(boardSize);
 }	
 
 function alertDraw(boardSize) {
@@ -179,5 +178,4 @@ function alertDraw(boardSize) {
 	$('.js-newgame').click(function(){
 		restart(boardSize);
 	});
-	//restart(boardSize);
 }
