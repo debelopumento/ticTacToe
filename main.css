@@ -21,12 +21,19 @@ nav {
 	margin: 4px;
 	padding-top: 3px;
 	padding-bottom: 6px;
+	border-radius: 3px;
 }
 
 button {
 	color: E7C47A;
 	background-color: #F2F0F2;
 	border: 0;
+	border-radius: 1px;
+}
+
+select {
+	border: 0;
+	border-radius: 1px;
 }
 
 main {
@@ -58,7 +65,7 @@ main {
 	background-color: #D46660;
 	background-size: 100% 100%;
 	border: 1px solid lightgrey;
-
+	border-radius: 5px;
 }
 
 
