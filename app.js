@@ -30,16 +30,20 @@ function renderBoard(boardSize, board){
 	var deviceWidth = window.screen.width;
 	var deviceHeight = window.screen.height;
 	if (deviceWidth < deviceHeight) {
-		var unitSize = (deviceWidth-30)/boardSize;
+		var unitSize = (deviceWidth-60)/boardSize;
 	}
 		else {
-			var unitSize = (deviceHeight-30)/boardSize;
-			console.log("who am i ", unitSize);
+			if (deviceHeight >= 320) {
+			var unitSize = (deviceHeight/1.7)/boardSize;
+			} 
+			else {
+				var unitSize = (deviceHeight-60)/boardSize;
+			}
 		}
+	
 	var boardRowWidth = boardSize*unitSize;
 	var boardHtml = '';
 	for (i=1; i <= boardSize; i++) {
-		//boardHtml = '';
 		boardHtml += '<div class="boardRow" style="width: ' + boardRowWidth + 'px" data-row="' + i + '">';
 		for (j=1; j <= boardSize; j++) {
 			boardHtml += '<span class="unit empty js-unit" style="width: ' + unitSize + 'px; height: ' + unitSize + 'px"  data-column="' + j + '">' + '</span>';

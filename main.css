@@ -15,9 +15,9 @@ html, body {
 nav {
 	text-align: center;
 	background: lightgrey;
-	margin: 10px;
+	margin: 4px;
 	padding-top: 3px;
-	padding-bottom: 10px;
+	padding-bottom: 6px;
 }
 
 main {
@@ -47,9 +47,11 @@ main {
 
 .unit {
 	background-color: white;
-	border: 2px solid black;
-
 	background-size: 100% 100%;
+	border: 1px solid lightgrey;
+	/*background-image: url(images/border.png);
+	/*border-image: url(images/border.png) 50 50 50 50 stretch stretch;*/
+
 }
 
 
@@ -60,3 +62,24 @@ main {
 .O {
 	background-image: url(images/O.png);
 }	
+
+
+/*@media (min-width: 568px) and (max-width: 736px) {
+	nav {
+		/*transform: rotate(90deg) translateX(80px);
+		/*writing-mode: vertical-rl;*/
+/*		width: 200px;
+		/*????? When the width changes, the padding/space between the board and the nav bar changes? 
+
+		height: 100px;
+		margin-top: 0;
+		margin-right: 10px;
+		padding: 5px;
+		float: right;
+	}
+
+	.boardControl {
+		display: block;
+
+	}
+} */
